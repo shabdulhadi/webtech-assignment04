@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown Slides</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HOME SCREEN -->
+  <div id="home" class="screen home">
+    <h1>Markdown Slides</h1>
+    <p>Write slides in Markdown. Use <code>---</code> to separate slides.</p>
+    <div class="row">
+      <button id="btnNew">Create Slides</button>
+      <button id="btnEdit">Edit Slides</button>
+      <button id="btnPresent">Present Slides</button>
+    </div>
+  </div>
+
+  <!-- EDITOR SCREEN -->
+  <div id="editor" class="screen hidden">
+    <div class="toolbar">
+      <button id="edHome">Home</button>
+      <button id="edSave">Save (Ctrl+S)</button>
+      <button id="edPresent">Present</button>
+      <span id="status"></span>
+    </div>
+    <div class="split">
+      <textarea id="mdInput" spellcheck="false"></textarea>
+      <div id="editorViewer" class="viewer-holder"></div>
+    </div>
+  </div>
+
+  <!-- PRESENT SCREEN -->
+  <div id="present" class="screen hidden">
+    <div class="toolbar"><button id="prHome">Back</button></div>
+    <div id="presentViewer" class="viewer-holder"></div>
+  </div>
+
+  <!-- Viewer template (used in editor and present screens) -->
+  <template id="viewerTpl">
+    <div class="viewer">
+      <div class="slide"></div>
+      <div class="controls">
+        <button class="prev">&larr; Left</button>
+        <span class="count">0 / 0</span>
+        <button class="next">Right &rarr;</button>
+        <button class="fs">&#x26F6; Full Screen</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f0f2f5; height: 100vh; }
+.hidden { display: none !important; }
+.screen { height: 100vh; display: flex; flex-direction: column; }
+
+button {
+  padding: 8px 14px; border: none; border-radius: 6px;
+  background: #2f6fed; color: white; cursor: pointer; font-size: 14px;
+}
+button:hover { background: #1f58c7; }
+button:disabled { background: #b8bfcc; cursor: not-allowed; }
+
+/* Home */
+.home { align-items: center; justify-content: center; text-align: center; }
+.home h1 { font-size: 40px; margin: 0; }
+.row { display: flex; gap: 12px; margin-top: 20px; }
+.row button { padding: 12px 20px; font-size: 16px; }
+
+/* Toolbar */
+.toolbar { display: flex; gap: 10px; align-items: center; padding: 10px; background: #1e2430; }
+#status { color: #7dff9b; font-size: 14px; }
+
+/* Editor split */
+.split { flex: 1; display: flex; min-height: 0; }
+#mdInput {
+  width: 50%; padding: 14px; border: none; resize: none; outline: none;
+  font-family: Consolas, monospace; font-size: 15px; background: #fff;
+  border-right: 2px solid #ccc;
+}
+.viewer-holder { flex: 1; min-width: 0; min-height: 0; display: flex; }
+.viewer-holder .viewer { flex: 1; }
+
+/* Viewer */
+.viewer { display: flex; flex-direction: column; background: #dfe3ea; padding: 12px; }
+.slide {
+  flex: 1; background: white; border-radius: 8px; padding: 30px 40px;
+  overflow: auto; box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+.controls { display: flex; justify-content: center; align-items: center; gap: 14px; padding-top: 10px; }
+.count { font-weight: bold; min-width: 70px; text-align: center; }
+
+/* Fullscreen mode */
+.viewer:fullscreen { background: #111; }
+.viewer:fullscreen .slide { font-size: 1.5em; padding: 60px 80px; }
+.viewer:fullscreen .count { color: white; }
+
+/* Markdown content */
+.slide h1 { font-size: 2.2em; margin-top: 0; color: #1e2430; }
+.slide h2 { font-size: 1.6em; color: #2f6fed; }
+.slide h3 { font-size: 1.3em; }
+.slide code { background: #eef0f4; padding: 2px 5px; border-radius: 4px; }
+.slide pre { background: #1e2430; color: #eee; padding: 12px; border-radius: 6px; overflow: auto; }
+.slide pre code { background: none; color: inherit; }
+.slide blockquote { border-left: 4px solid #2f6fed; margin-left: 0; padding-left: 12px; color: #555; }
+.slide img { max-width: 100%; }
